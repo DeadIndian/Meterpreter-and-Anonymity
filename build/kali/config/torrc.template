@@ -1,0 +1,4 @@
+# Lab 2 Tor baseline
+SOCKSPort 9050
+SOCKSPolicy accept 127.0.0.1
+Log notice file /var/log/tor/notices.log

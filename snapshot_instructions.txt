@@ -1,0 +1,44 @@
+Lab 2 Snapshot Instructions
+===========================
+
+Goal
+----
+Create a clean "ready-to-start" snapshot for each VM before student practice.
+
+Kali Snapshot State
+-------------------
+1. Run build/kali/setup_kali_lab2.sh successfully.
+2. Verify:
+   - tor active
+   - postgresql active
+   - /etc/proxychains4.conf contains dynamic_chain and proxy_dns
+   - ~/lab2_listener.rc exists
+   - ~/validate_lab2.sh exists and is executable
+3. Network:
+   - Adapter 1: NAT or Bridged (internet)
+   - Adapter 2: Host-only 192.168.56.0/24
+   - Kali host-only IP: 192.168.56.100
+4. Reboot Kali once.
+5. Run ~/validate_lab2.sh and save output.
+6. Power off VM and create snapshot name: kali-lab2-ready.
+
+Windows Snapshot State
+----------------------
+1. Copy and run build/windows/setup_windows_lab2.ps1 as Administrator.
+2. Select vulnerability option (A recommended in spec).
+3. Ensure host-only IP is set to 192.168.56.150.
+4. Reboot Windows.
+5. Run build/windows/check_windows_lab2.ps1 as Administrator.
+6. Confirm one notepad.exe instance is open.
+7. Confirm local users:
+   - labuser / Password123!
+   - Administrator / AdminPass123!
+8. Power off VM and create snapshot name: windows-lab2-ready.
+
+Export Guidance
+---------------
+1. Export each VM as OVA 2.0.
+2. Name files:
+   - kali-lab2.ova
+   - windows10-lab2.ova
+3. Zip and encrypt before transfer.

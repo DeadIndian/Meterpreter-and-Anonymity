@@ -1,0 +1,13 @@
+# Lab 2 ProxyChains baseline
+# This template will replace /etc/proxychains4.conf
+
+dynamic_chain
+
+proxy_dns
+
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+
+[ProxyList]
+socks5 127.0.0.1 9050
+# socks4 127.0.0.1 1080   # Example additional proxy
